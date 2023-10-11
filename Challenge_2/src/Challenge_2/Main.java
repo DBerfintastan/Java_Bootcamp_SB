@@ -12,8 +12,8 @@ public class Main {
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Input: ");
 		String input = scanner.nextLine();
-		//count(input);
-		//zipzop(input);
+		count(input);
+		zipzop(input);
 		replace(input);
 	}
 
