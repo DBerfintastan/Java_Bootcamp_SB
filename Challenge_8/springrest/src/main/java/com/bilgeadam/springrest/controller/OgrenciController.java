@@ -13,11 +13,11 @@ import com.bilgeadam.springrest.repository.*;
 @RequestMapping(path = "ogrenci")
 public class OgrenciController
 {
-	private OgrencıRepository ogrencıRepository;
+	private OgrenciRepository ogrenciRepository;
 
-	public OgrenciController(OgrencıRepository ogrencıRepository)
+	public OgrenciController(OgrenciRepository ogrenciRepository)
 	{
-		this.ogrencıRepository = ogrencıRepository;
+		this.ogrenciRepository = ogrenciRepository;
 	}
 
 	@PostMapping(path = "save", consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -26,7 +26,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogretmen/save
 		try
 		{
-			boolean result = ogrencıRepository.save(ogr);
+			boolean result = ogrenciRepository.save(ogr);
 			if (result)
 			{
 				return ResponseEntity.ok("Kayıt başarı ile kaydedildi");
@@ -49,7 +49,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogretmen/getbyidheader
 		try
 		{
-			return ResponseEntity.ok(ogrencıRepository.getByID(id));
+			return ResponseEntity.ok(ogrenciRepository.getByID(id));
 		}
 		catch (EmptyResultDataAccessException e)
 		{
@@ -68,7 +68,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogretmen/getbyidqueryparam?id=1
 		try
 		{
-			return ResponseEntity.ok(ogrencıRepository.getByID(id));
+			return ResponseEntity.ok(ogrenciRepository.getByID(id));
 		}
 		catch (EmptyResultDataAccessException e)
 		{
@@ -87,7 +87,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogretmen/getbyid/1
 		try
 		{
-			return ResponseEntity.ok(ogrencıRepository.getByID(id));
+			return ResponseEntity.ok(ogrenciRepository.getByID(id));
 		}
 		catch (EmptyResultDataAccessException e)
 		{
@@ -106,7 +106,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogretmen/deletebyid/1
 		try
 		{
-			boolean result = ogrencıRepository.deleteByID(id);
+			boolean result = ogrenciRepository.deleteByID(id);
 			if (result)
 			{
 				return ResponseEntity.ok(id + "id 'li kayıt başarı ile silindi");
@@ -129,7 +129,7 @@ public class OgrenciController
 		// localhost:8080/springrest/ogrenci/getall
 		try
 		{
-			return ResponseEntity.ok(ogrencıRepository.getAll());
+			return ResponseEntity.ok(ogrenciRepository.getAll());
 		}
 		catch (Exception e)
 		{
